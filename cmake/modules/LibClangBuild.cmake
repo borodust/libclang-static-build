@@ -53,80 +53,80 @@ set(LIBCLANG_LINK_LIBS
   LLVMAArch64Disassembler
   LLVMAArch64Info
   LLVMAArch64Utils
-  LLVMAMDGPUCodeGen
-  LLVMAMDGPUAsmParser
-  LLVMAMDGPUDesc
-  LLVMAMDGPUDisassembler
-  LLVMAMDGPUInfo
-  LLVMAMDGPUUtils
-  LLVMARMCodeGen
-  LLVMARMAsmParser
-  LLVMARMDesc
-  LLVMARMDisassembler
-  LLVMARMInfo
-  LLVMARMUtils
-  LLVMBPFCodeGen
-  LLVMBPFAsmParser
-  LLVMBPFDesc
-  LLVMBPFDisassembler
-  LLVMBPFInfo
-  LLVMHexagonCodeGen
-  LLVMHexagonAsmParser
-  LLVMHexagonDesc
-  LLVMHexagonDisassembler
-  LLVMHexagonInfo
-  LLVMLanaiCodeGen
-  LLVMLanaiAsmParser
-  LLVMLanaiDesc
-  LLVMLanaiDisassembler
-  LLVMLanaiInfo
-  LLVMMipsCodeGen
-  LLVMMipsAsmParser
-  LLVMMipsDesc
-  LLVMMipsDisassembler
-  LLVMMipsInfo
-  LLVMMSP430CodeGen
-  LLVMMSP430AsmParser
-  LLVMMSP430Desc
-  LLVMMSP430Disassembler
-  LLVMMSP430Info
-  LLVMNVPTXCodeGen
-  LLVMNVPTXDesc
-  LLVMNVPTXInfo
-  LLVMPowerPCCodeGen
-  LLVMPowerPCAsmParser
-  LLVMPowerPCDesc
-  LLVMPowerPCDisassembler
-  LLVMPowerPCInfo
-  LLVMRISCVCodeGen
-  LLVMRISCVAsmParser
-  LLVMRISCVDesc
-  LLVMRISCVDisassembler
-  LLVMRISCVInfo
-  LLVMSparcCodeGen
-  LLVMSparcAsmParser
-  LLVMSparcDesc
-  LLVMSparcDisassembler
-  LLVMSparcInfo
-  LLVMSystemZCodeGen
-  LLVMSystemZAsmParser
-  LLVMSystemZDesc
-  LLVMSystemZDisassembler
-  LLVMSystemZInfo
-  LLVMWebAssemblyCodeGen
-  LLVMWebAssemblyAsmParser
-  LLVMWebAssemblyDesc
-  LLVMWebAssemblyDisassembler
-  LLVMWebAssemblyInfo
+#  LLVMAMDGPUCodeGen
+#  LLVMAMDGPUAsmParser
+#  LLVMAMDGPUDesc
+#  LLVMAMDGPUDisassembler
+#  LLVMAMDGPUInfo
+#  LLVMAMDGPUUtils
+#  LLVMARMCodeGen
+#  LLVMARMAsmParser
+#  LLVMARMDesc
+#  LLVMARMDisassembler
+#  LLVMARMInfo
+#  LLVMARMUtils
+#  LLVMBPFCodeGen
+#  LLVMBPFAsmParser
+#  LLVMBPFDesc
+#  LLVMBPFDisassembler
+#  LLVMBPFInfo
+#  LLVMHexagonCodeGen
+#  LLVMHexagonAsmParser
+#  LLVMHexagonDesc
+#  LLVMHexagonDisassembler
+#  LLVMHexagonInfo
+#  LLVMLanaiCodeGen
+#  LLVMLanaiAsmParser
+#  LLVMLanaiDesc
+#  LLVMLanaiDisassembler
+#  LLVMLanaiInfo
+#  LLVMMipsCodeGen
+#  LLVMMipsAsmParser
+#  LLVMMipsDesc
+#  LLVMMipsDisassembler
+#  LLVMMipsInfo
+#  LLVMMSP430CodeGen
+#  LLVMMSP430AsmParser
+#  LLVMMSP430Desc
+#  LLVMMSP430Disassembler
+#  LLVMMSP430Info
+#  LLVMNVPTXCodeGen
+#  LLVMNVPTXDesc
+#  LLVMNVPTXInfo
+#  LLVMPowerPCCodeGen
+#  LLVMPowerPCAsmParser
+#  LLVMPowerPCDesc
+#  LLVMPowerPCDisassembler
+#  LLVMPowerPCInfo
+#  LLVMRISCVCodeGen
+#  LLVMRISCVAsmParser
+#  LLVMRISCVDesc
+#  LLVMRISCVDisassembler
+#  LLVMRISCVInfo
+#  LLVMSparcCodeGen
+#  LLVMSparcAsmParser
+#  LLVMSparcDesc
+#  LLVMSparcDisassembler
+#  LLVMSparcInfo
+#  LLVMSystemZCodeGen
+#  LLVMSystemZAsmParser
+#  LLVMSystemZDesc
+#  LLVMSystemZDisassembler
+#  LLVMSystemZInfo
+#  LLVMWebAssemblyCodeGen
+#  LLVMWebAssemblyAsmParser
+#  LLVMWebAssemblyDesc
+#  LLVMWebAssemblyDisassembler
+#  LLVMWebAssemblyInfo
   LLVMX86CodeGen
   LLVMX86AsmParser
   LLVMX86Desc
   LLVMX86Disassembler
   LLVMX86Info
-  LLVMXCoreCodeGen
-  LLVMXCoreDesc
-  LLVMXCoreDisassembler
-  LLVMXCoreInfo
+#  LLVMXCoreCodeGen
+#  LLVMXCoreDesc
+#  LLVMXCoreDisassembler
+#  LLVMXCoreInfo
   LLVMCore
   LLVMSupport
   clangFormat
@@ -149,26 +149,26 @@ set(LIBCLANG_LINK_LIBS
   LLVMAArch64Info
   LLVMAArch64Utils
   LLVMMIRParser
-  LLVMAMDGPUDesc
-  LLVMAMDGPUInfo
-  LLVMAMDGPUUtils
-  LLVMARMDesc
-  LLVMARMInfo
-  LLVMARMUtils
-  LLVMHexagonDesc
-  LLVMHexagonInfo
-  LLVMLanaiDesc
-  LLVMLanaiInfo
+#  LLVMAMDGPUDesc
+#  LLVMAMDGPUInfo
+#  LLVMAMDGPUUtils
+#  LLVMARMDesc
+#  LLVMARMInfo
+#  LLVMARMUtils
+#  LLVMHexagonDesc
+#  LLVMHexagonInfo
+#  LLVMLanaiDesc
+#  LLVMLanaiInfo
   LLVMipo
   LLVMVectorize
   LLVMIRReader
   LLVMAsmParser
   LLVMInstrumentation
   LLVMLinker
-  LLVMSystemZDesc
-  LLVMSystemZInfo
-  LLVMWebAssemblyDesc
-  LLVMWebAssemblyInfo
+#  LLVMSystemZDesc
+#  LLVMSystemZInfo
+#  LLVMWebAssemblyDesc
+#  LLVMWebAssemblyInfo
   LLVMGlobalISel
   LLVMAsmPrinter
   LLVMDebugInfoDWARF
@@ -198,11 +198,11 @@ set(LIBCLANG_LINK_LIBS
   LLVMCFGuard
   LLVMFrontendOpenMP
   LLVMDemangle
-  LLVMAVRCodeGen
-  LLVMAVRAsmParser
-  LLVMAVRDisassembler
-  LLVMAVRDesc
-  LLVMAVRInfo
+#  LLVMAVRCodeGen
+#  LLVMAVRAsmParser
+#  LLVMAVRDisassembler
+#  LLVMAVRDesc
+#  LLVMAVRInfo
   LLVMPasses
   LLVMCoroutines
   LLVMSupport

@@ -1,3 +1,6 @@
+option(LIBCLANG_SOURCES_DIR "Path to libclang sources" "")
+option(LIBCLANG_PREBUILT_DIR "Path to prebuilt libclang" "")
+
 if(APPLE)
   set(LIBCLANG_PREBUILT_URL https://github.com/llvm/llvm-project/releases/download/llvmorg-12.0.0/clang+llvm-12.0.0-x86_64-apple-darwin.tar.xz)
 else()
@@ -13,19 +16,25 @@ endif()
 
 include(Download)
 message(STATUS "Downloading ncurses sources, prebuilt z3 & prebuilt libclang with sources; this is ~500MB, please be patient, 'libclang_prebuilt' will take several minutes ...")
+
 set(NCURSES_SOURCE_DIR)
 download(ncurses_sources ${NCURSES_SOURCES_URL} NCURSES_DOWNLOAD_DIR)
-set(LIBCLANG_SOURCES_DIR)
-download(clang_sources ${CLANG_SOURCES_URL} LIBCLANG_SOURCES_DIR)
+
+if (LIBCLANG_SOURCES_DIR STREQUAL "")
+  download(clang_sources ${CLANG_SOURCES_URL} LIBCLANG_SOURCES_DIR)
+endif()
+
 set(Z3_PREBUILT_DIR)
 download(z3_prebuilt ${Z3_PREBUILT_URL} Z3_PREBUILT_DIR)
-set(LIBCLANG_PREBUILT_DIR)
-download(libclang_prebuilt ${LIBCLANG_PREBUILT_URL} LIBCLANG_PREBUILT_DIR)
+
+if (LIBCLANG_PREBUILT_DIR STREQUAL "")
+  download(libclang_prebuilt ${LIBCLANG_PREBUILT_URL} LIBCLANG_PREBUILT_DIR)
+endif()
 
 include(ExternalProject)
 ExternalProject_Add(ncurses
   SOURCE_DIR ${NCURSES_DOWNLOAD_DIR}
-  CONFIGURE_COMMAND <SOURCE_DIR>/configure --enable-rpath --prefix=${CMAKE_INSTALL_PREFIX} --with-shared --with-static --with-normal --without-debug --without-ada --enable-widec --disable-pc-files --with-cxx-binding --without-cxx-shared --with-abi-version=5
+  CONFIGURE_COMMAND <SOURCE_DIR>/configure "CFLAGS=-fPIC" --enable-rpath --prefix=${CMAKE_INSTALL_PREFIX} --with-shared --with-static --with-normal --without-debug --without-ada --enable-widec --disable-pc-files --with-cxx-binding --without-cxx-shared --with-abi-version=5
   BUILD_COMMAND make
   INSTALL_COMMAND ""
   )

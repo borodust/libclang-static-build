@@ -1,10 +1,22 @@
 set(LIBCLANG_PREBUILT_URL https://ziglang.org/deps/llvm+clang+lld-12.0.0-x86_64-windows-msvc-release-mt.tar.xz)
 set(CLANG_SOURCES_URL https://github.com/llvm/llvm-project/releases/download/llvmorg-12.0.0/clang-12.0.0.src.tar.xz)
 
+option(LIBCLANG_SOURCES_DIR "Path to libclang sources" "")
+option(LIBCLANG_PREBUILT_DIR "Path to prebuilt libclang" "")
+
 include(Download)
-message(STATUS "Downloading prebuilt libclang with sources; this is ~500MB, please be patient, 'libclang_prebuilt' will take several minutes ...")
-download(clang_sources ${CLANG_SOURCES_URL} LIBCLANG_SOURCES_DIR)
-download(libclang_prebuilt ${LIBCLANG_PREBUILT_URL} LIBCLANG_PREBUILT_DIR)
+
+cmake_path(CONVERT "${LIBCLANG_SOURCES_DIR}" TO_CMAKE_PATH_LIST LIBCLANG_SOURCES_DIR)
+cmake_path(CONVERT "${LIBCLANG_PREBUILT_DIR}" TO_CMAKE_PATH_LIST LIBCLANG_PREBUILT_DIR)
+
+if (LIBCLANG_SOURCES_DIR STREQUAL "")
+   message(STATUS "Downloading prebuilt libclang with sources; this is ~500MB, please be patient, 'libclang_prebuilt' will take several minutes ...")
+   download(clang_sources ${CLANG_SOURCES_URL} LIBCLANG_SOURCES_DIR)
+endif()
+
+if (LIBCLANG_PREBUILT_DIR STREQUAL "")
+   download(libclang_prebuilt ${LIBCLANG_PREBUILT_URL} LIBCLANG_PREBUILT_DIR)
+endif()
 
 list(APPEND CMAKE_MODULE_PATH "${LIBCLANG_PREBUILT_DIR}/lib/cmake/clang")
 list(APPEND CMAKE_MODULE_PATH "${LIBCLANG_PREBUILT_DIR}/lib/cmake/llvm")
@@ -43,7 +55,7 @@ if(NOT lib_tool)
   get_filename_component(CXX_COMPILER_DIRECTORY "${CMAKE_CXX_COMPILER}" PATH)
   set(lib_tool "${CXX_COMPILER_DIRECTORY}/lib.exe")
 endif()
-set(AR_COMMAND ${lib_tool} /NOLOGO /OUT:${CMAKE_CURRENT_BINARY_DIR}/clang_static_bundled.lib "${CMAKE_CURRENT_BINARY_DIR}/obj.libclang.dir/Release/obj.libclang.lib" ${LIBCLANG_PREBUILT_LIBS})
+set(AR_COMMAND ${lib_tool} /NOLOGO /OUT:${CMAKE_CURRENT_BINARY_DIR}/clang_static_bundled.lib "${CMAKE_CURRENT_BINARY_DIR}/obj.libclang.dir/${CMAKE_BUILD_TYPE}/obj.libclang.lib" ${LIBCLANG_PREBUILT_LIBS})
 
 add_custom_target(libclang_static_bundled ALL
   COMMAND ${AR_COMMAND}
