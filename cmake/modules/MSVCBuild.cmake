@@ -46,7 +46,7 @@ add_clang_library(libclang
   ADDITIONAL_HEADERS ${LIBCLANG_ADDITIONAL_HEADERS}
   )
 
-set_target_properties(libclang PROPERTIES VERSION 12)
+set_target_properties(libclang PROPERTIES VERSION 13)
 
 target_compile_definitions(obj.libclang PUBLIC "_CINDEX_LIB_")
 
